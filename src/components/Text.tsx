@@ -1,11 +1,13 @@
-
-'use client';
-import React, { useEffect, useRef, useState, useMemo, useCallback } from 'react';
-// 👇 Impor Tipe secara terpisah
-import type { ElementType } from 'react'; 
-
-import { gsap } from 'gsap';
-import './TextType.css';
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useMemo,
+  forwardRef
+} from "react";
+import type { ElementType } from "react";
+import { gsap } from "gsap";
+import "./TextType.css";
 
 interface TextTypeProps {
   className?: string;
@@ -28,170 +30,195 @@ interface TextTypeProps {
   reverseMode?: boolean;
 }
 
-const TextType = ({
-  text,
-  as: Component = 'div',
-  typingSpeed = 50,
-  initialDelay = 0,
-  pauseDuration = 2000,
-  deletingSpeed = 30,
-  loop = true,
-  className = '',
-  showCursor = true,
-  hideCursorWhileTyping = false,
-  cursorCharacter = '|',
-  cursorClassName = '',
-  cursorBlinkDuration = 0.5,
-  textColors = [],
-  variableSpeed,
-  onSentenceComplete,
-  startOnVisible = false,
-  reverseMode = false,
-  ...props
-}: TextTypeProps & React.HTMLAttributes<HTMLElement>) => {
-  const [displayedText, setDisplayedText] = useState('');
-  const [currentCharIndex, setCurrentCharIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(!startOnVisible);
-  const cursorRef = useRef<HTMLSpanElement>(null);
-  const containerRef = useRef<HTMLElement>(null);
+/** FIXED: no-any */
+type AsComponent = ElementType;
 
-  const textArray = useMemo(() => (Array.isArray(text) ? text : [text]), [text]);
+/** FIXED: TS Polymorphic typing */
+type PolymorphicProps<T extends ElementType> =
+  React.ComponentPropsWithoutRef<T> & TextTypeProps;
 
-  const getRandomSpeed = useCallback(() => {
-    if (!variableSpeed) return typingSpeed;
-    const { min, max } = variableSpeed;
-    return Math.random() * (max - min) + min;
-  }, [variableSpeed, typingSpeed]);
+const TextType = forwardRef<HTMLElement, PolymorphicProps<AsComponent>>(
+  (
+    {
+      text,
+      as: Component = "div",
+      typingSpeed = 50,
+      initialDelay = 0,
+      pauseDuration = 2000,
+      deletingSpeed = 30,
+      loop = true,
+      className = "",
+      showCursor = true,
+      hideCursorWhileTyping = false,
+      cursorCharacter = "|",
+      cursorClassName = "",
+      cursorBlinkDuration = 0.5,
+      textColors = [],
+      variableSpeed,
+      onSentenceComplete,
+      startOnVisible = false,
+      reverseMode = false,
+      ...props
+    },
+    forwardedRef
+  ) => {
+    /** STATE */
+    const [displayedText, setDisplayedText] = useState("");
+    const [charIdx, setCharIdx] = useState(0);
+    const [textIdx, setTextIdx] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [isVisible, setIsVisible] = useState(!startOnVisible);
 
-  const getCurrentTextColor = () => {
-    if (textColors.length === 0) return;
-    return textColors[currentTextIndex % textColors.length];
-  };
+    /** REFS */
+    const rootRef = useRef<HTMLElement | null>(null);
+    const cursorRef = useRef<HTMLSpanElement | null>(null);
 
-  useEffect(() => {
-    if (!startOnVisible || !containerRef.current) return;
+    /** Sync forwarded ref */
+    useEffect(() => {
+      const node = rootRef.current;
 
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+      if (!forwardedRef) return;
 
-    observer.observe(containerRef.current);
-    return () => observer.disconnect();
-  }, [startOnVisible]);
+      if (typeof forwardedRef === "function") {
+        forwardedRef(node);
+      } else if ("current" in forwardedRef) {
+        forwardedRef.current = node;
+      }
+    }, [forwardedRef]);
 
-  useEffect(() => {
-    if (showCursor && cursorRef.current) {
-      gsap.set(cursorRef.current, { opacity: 1 });
+    /** Normalize text array */
+    const textArr = useMemo(() => {
+      return Array.isArray(text) ? text : [text];
+    }, [text]);
+
+    /** Cursor blink animation */
+    useEffect(() => {
+      if (!cursorRef.current || !showCursor) return;
+
       gsap.to(cursorRef.current, {
         opacity: 0,
         duration: cursorBlinkDuration,
         repeat: -1,
-        yoyo: true,
-        ease: 'power2.inOut'
+        yoyo: true
       });
-    }
-  }, [showCursor, cursorBlinkDuration]);
+    }, [showCursor, cursorBlinkDuration]);
 
-  useEffect(() => {
-    if (!isVisible) return;
-let timeout: ReturnType<typeof setTimeout>;
+    /** Visible trigger (observer) */
+    useEffect(() => {
+      if (!startOnVisible) return;
 
+      const el = rootRef.current;
+      if (!el) return;
 
-    const currentText = textArray[currentTextIndex];
-    const processedText = reverseMode ? currentText.split('').reverse().join('') : currentText;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setIsVisible(true);
+        },
+        { threshold: 0.1 }
+      );
 
-    const executeTypingAnimation = () => {
-      if (isDeleting) {
-        if (displayedText === '') {
-          setIsDeleting(false);
-          if (currentTextIndex === textArray.length - 1 && !loop) {
-            return;
+      observer.observe(el);
+      return () => observer.disconnect();
+    }, [startOnVisible]);
+
+    /** Typing logic */
+    useEffect(() => {
+      if (!isVisible) return;
+
+      let timeout: ReturnType<typeof setTimeout>;
+
+      const realText = reverseMode
+        ? textArr[textIdx].split("").reverse().join("")
+        : textArr[textIdx];
+
+      const speed = variableSpeed
+        ? Math.random() * (variableSpeed.max - variableSpeed.min) +
+          variableSpeed.min
+        : typingSpeed;
+
+      const run = () => {
+        if (isDeleting) {
+          if (displayedText === "") {
+            setIsDeleting(false);
+            const next = (textIdx + 1) % textArr.length;
+            setTextIdx(next);
+            setCharIdx(0);
+
+            if (!loop && next === 0) return;
+
+            if (onSentenceComplete)
+              onSentenceComplete(textArr[textIdx], textIdx);
+
+            timeout = setTimeout(run, pauseDuration);
+          } else {
+            timeout = setTimeout(
+              () => setDisplayedText((t) => t.slice(0, -1)),
+              deletingSpeed
+            );
           }
-
-          if (onSentenceComplete) {
-            onSentenceComplete(textArray[currentTextIndex], currentTextIndex);
-          }
-
-          setCurrentTextIndex(prev => (prev + 1) % textArray.length);
-          setCurrentCharIndex(0);
-          timeout = setTimeout(() => {}, pauseDuration);
         } else {
-          timeout = setTimeout(() => {
-            setDisplayedText(prev => prev.slice(0, -1));
-          }, deletingSpeed);
+          if (charIdx < realText.length) {
+            timeout = setTimeout(() => {
+              setDisplayedText((t) => t + realText[charIdx]);
+              setCharIdx((i) => i + 1);
+            }, speed);
+          } else if (textArr.length > 1) {
+            timeout = setTimeout(() => setIsDeleting(true), pauseDuration);
+          }
         }
-      } else {
-        if (currentCharIndex < processedText.length) {
-          timeout = setTimeout(
-            () => {
-              setDisplayedText(prev => prev + processedText[currentCharIndex]);
-              setCurrentCharIndex(prev => prev + 1);
-            },
-            variableSpeed ? getRandomSpeed() : typingSpeed
-          );
-        } else if (textArray.length > 1) {
-          timeout = setTimeout(() => {
-            setIsDeleting(true);
-          }, pauseDuration);
-        }
-      }
-    };
+      };
 
-    if (currentCharIndex === 0 && !isDeleting && displayedText === '') {
-      timeout = setTimeout(executeTypingAnimation, initialDelay);
-    } else {
-      executeTypingAnimation();
-    }
+      timeout = setTimeout(run, initialDelay);
 
-    return () => clearTimeout(timeout);
-  }, [
-    currentCharIndex,
-    displayedText,
-    isDeleting,
-    typingSpeed,
-    deletingSpeed,
-    pauseDuration,
-    textArray,
-    currentTextIndex,
-    loop,
-    initialDelay,
-    isVisible,
-    reverseMode,
-    variableSpeed,
-    onSentenceComplete
-  ]);
+      return () => clearTimeout(timeout);
+    }, [
+      displayedText,
+      charIdx,
+      isDeleting,
+      reverseMode,
+      textIdx,
+      typingSpeed,
+      deletingSpeed,
+      pauseDuration,
+      textArr,
+      isVisible,
+      loop,
+      initialDelay,
+      variableSpeed,
+      onSentenceComplete
+    ]);
 
-  const shouldHideCursor =
-    hideCursorWhileTyping && (currentCharIndex < textArray[currentTextIndex].length || isDeleting);
+    const hideCursor =
+      hideCursorWhileTyping &&
+      (charIdx < textArr[textIdx].length || isDeleting);
 
-  return React.createElement(
-    Component,
-    {
-      ref: containerRef,
-      className: `text-type ${className}`,
-      ...props
-    },
-    <span className="text-type__content" style={{ color: getCurrentTextColor() || 'inherit' }}>
-      {displayedText}
-    </span>,
-    showCursor && (
-      <span
-        ref={cursorRef}
-        className={`text-type__cursor ${cursorClassName} ${shouldHideCursor ? 'text-type__cursor--hidden' : ''}`}
-      >
-        {cursorCharacter}
-      </span>
-    )
-  );
-};
+    const activeColor =
+      textColors.length > 0
+        ? textColors[textIdx % textColors.length]
+        : undefined;
+
+    /** RENDER */
+    return (
+      <Component ref={rootRef} className={`text-type ${className}`} {...props}>
+        <span className="text-type__content" style={{ color: activeColor }}>
+          {displayedText}
+        </span>
+
+        {showCursor && (
+          <span
+            ref={cursorRef}
+            className={`text-type__cursor ${cursorClassName} ${
+              hideCursor ? "text-type__cursor--hidden" : ""
+            }`}
+          >
+            {cursorCharacter}
+          </span>
+        )}
+      </Component>
+    );
+  }
+);
+
+TextType.displayName = "TextType";
 
 export default TextType;
