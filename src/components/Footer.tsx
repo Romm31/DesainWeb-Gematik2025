@@ -64,7 +64,7 @@ const Footer = () => {
 
         {/* Copyright Bar (Di bawah, responsif) */}
         <div className="mt-10 text-center text-sm text-gray-500 pt-6 border-t border-blue-800">
-          © {currentYear} YouthDisrupt. All rights reserved.
+          © {currentYear} Gen-Z All rights reserved.
         </div>
         
       </div>

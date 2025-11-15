@@ -10,7 +10,7 @@ import Program from "./components/program";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import Model3D from "./components/Model3d";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -52,11 +52,13 @@ function App() {
       Learn More
     </button>
     </div>
-    <div className="col-span-12 md:col-span-6 z-20"> <Canvas camera={{ position: [1, 3, 3], fov: 50 }}>
+    <div className="col-span-12 md:col-span-6 z-20" > <Canvas  camera={{ position: [1, 3, 3], fov: 50 }} >
       <ambientLight intensity={0.5} />
       <directionalLight position={[5, 5, 5]} />
       <Model3D />
-      <OrbitControls enableZoom={true} />
+      <OrbitControls enableZoom={true}
+      autoRotate
+      autoRotateSpeed={0.5}  />
       <Environment preset="sunset" />
     </Canvas></div>
 </div>
