@@ -31,7 +31,7 @@ function App() {
     </div>
     
     {/* Konten lainnya tetap di-render dengan z-index tinggi */}
-    <div className="col-span-12 md:col-span-6  z-20 flex flex-col  items-start mx-20 mt-30">
+    <div className="col-span-12 md:col-span-6  z-20 flex flex-col  items-start mx-20 justify-center">
       <div className="text-white text-5xl font-bold mb-5">
       <TextType
         text={["Coding", "for your websites", "Happy coding!"]}
@@ -55,7 +55,8 @@ function App() {
       Learn More
     </button>
     </div>
-    <div className="col-span-12 md:col-span-6 z-20" > <Canvas  camera={{ position: [1, 3, 3], fov: 50 }} >
+    <div className="col-span-12 md:col-span-6 z-20 mt-20" >
+      <Canvas  camera={{ position: [1, 3, 3], fov: 50 }} >
       <ambientLight intensity={0.5} />
       <directionalLight position={[5, 5, 5]} />
       <Model3D />
