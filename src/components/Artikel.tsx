@@ -25,12 +25,12 @@ const article = [
 const Artikels: React.FC = () => {
   return (
     <section className="max-w-7xl mx-auto py-16 px-4">
-      <h2 className="text-4xl font-bold text-center mb-12 text-yellow-800">Artikel Kopi</h2>
+      <h2 className="text-5xl font-bold text-center mb-12 text-black">Artikel</h2>
       <div className="grid md:grid-cols-3 gap-8">
         {article.map((article) => (
           <div
             key={article.id}
-            className="bg-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition"
+            className="bg- rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition"
           >
             <img
               src={article.image}

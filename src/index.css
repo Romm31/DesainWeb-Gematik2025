@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+*{
+  scroll-behavior: smooth;
+}
 .darkveil-canvas {
   width: 100%;
   height: 100%;

@@ -7,7 +7,7 @@ function Header() {
     <nav className="bg-[#000000] text-white shadow-lg py-5">
       <div className="container mx-auto px-6 py-3 flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-2xl font-bold tracking-wide">Gen-Z</h1>
+        <h1 className="text-2xl font-bold tracking-wide">Gen- <span className="text-amber-400">Z</span></h1>
 
         {/* Menu desktop */}
         <ul className="hidden md:flex space-x-8 font-medium">
