@@ -11,6 +11,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import Model3D from "./components/Model3d";
 import Footer from "./components/Footer";
+import CircleTransition from "./components/transisi";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,9 +23,11 @@ function App() {
 
 <div className="relative w-full h-screen overflow-hidden grid grid-cols-12">
     
+    
     {/* Wrapper untuk Slider */}
     <div className="absolute inset-0 z-0">
         <Slider/>
+        
     </div>
     
     {/* Konten lainnya tetap di-render dengan z-index tinggi */}
@@ -65,10 +68,11 @@ function App() {
 
 
 
-
+    <CircleTransition />
+<div className="z-30 overflow-hidden relative">
 
     <About/>
-    <div className="bg-[#e5e7eb] min-h-screen overflow-x-hidden">
+    <div className="bg-[#e5e7eb] min-h-screen overflow-x-hidden ">
 
      <Program/>
     </div>
@@ -80,6 +84,7 @@ function App() {
 
        
       <Footer/>
+</div>
     
     </>
   );
