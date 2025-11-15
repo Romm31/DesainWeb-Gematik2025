@@ -37,12 +37,6 @@ const MailIcon = () => (
   </svg>
 );
 
-const RocketIcon = () => (
-  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-  </svg>
-);
-
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -145,23 +139,6 @@ function Header() {
               })}
             </div>
 
-            {/* CTA Button - Premium Gradient */}
-            <div className="hidden lg:block">
-              <button className="relative group px-7 py-3.5 rounded-xl font-black text-sm overflow-hidden shadow-2xl shadow-orange-500/30 hover:shadow-orange-500/50 transition-all duration-500 hover:scale-105">
-                {/* Animated gradient backgrounds */}
-                <div className="absolute inset-0 bg-linear-to-r from-yellow-400 via-orange-500 to-pink-500"></div>
-                <div className="absolute inset-0 bg-linear-to-r from-pink-500 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                
-                {/* Shimmer effect */}
-                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/30 to-transparent"></div>
-                
-                <span className="relative flex items-center gap-2 text-black group-hover:text-white transition-colors duration-300">
-                  <RocketIcon />
-                  Get Started
-                </span>
-              </button>
-            </div>
-
             {/* Mobile Menu Button - Elegant */}
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -183,7 +160,7 @@ function Header() {
           }`}
         >
           <div className="container mx-auto px-6 py-10 h-full flex flex-col">
-            <div className="space-y-3 flex-1">
+            <div className="space-y-3">
               {navItems.map((item, index) => {
                 const Icon = item.icon;
                 const isActive = activeSection === item.name.toLowerCase();
@@ -216,17 +193,6 @@ function Header() {
                 );
               })}
             </div>
-
-            {/* Mobile CTA - Premium */}
-            <button className="relative group w-full mt-6 px-6 py-5 rounded-2xl font-black text-base overflow-hidden shadow-2xl hover:shadow-orange-500/40 transition-all duration-500 active:scale-95">
-              <div className="absolute inset-0 bg-linear-to-r from-yellow-400 via-orange-500 to-pink-500"></div>
-              <div className="absolute inset-0 bg-linear-to-r from-pink-500 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/30 to-transparent"></div>
-              <span className="relative flex items-center justify-center gap-2.5 text-black group-hover:text-white transition-colors duration-300">
-                <RocketIcon />
-                Get Started
-              </span>
-            </button>
           </div>
         </div>
       </nav>
