@@ -47,7 +47,7 @@ function App() {
     </h1>
 
     <h2 className="text-white max-w-3xl mt-3">
-      Empowering Youth in the Era of Disruption Bangun potensi diri dan keterampilan masa depan.
+      Bangun potensi diri dan keterampilan masa depan.
       Wujudkan inovasi yang memberikan dampak nyata untuk Indonesia.
     </h2>
 
