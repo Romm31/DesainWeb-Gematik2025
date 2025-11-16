@@ -61,8 +61,8 @@ const Program = () => {
   return (
     <section className="relative max-w-7xl mx-auto py-20 px-4 overflow-hidden">
       {/* Header */}
-      <div className="text-center mb-16">
-        <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+      <div className="text-center mb-12">
+        <h2 className="text-5xl  font-bold mb-6 text-gray-900">
           Program Kami
         </h2>
         <p className="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">

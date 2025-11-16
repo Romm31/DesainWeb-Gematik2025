@@ -8,10 +8,33 @@ import Program from "./components/program";
 import Footer from "./components/Footer";
 import CircleTransition from "./components/transisi";
 import Model3D from "./components/Model3d";
-// import Artikels from "./components/Artikel"; // Uncomment kalau mau dipakai
+import Artikels from "./components/Artikel";
+import Squares from "./components/Squares";
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
+import ClientSection from "./components/client";
+import LogoLoop from "./components/LogoLoop";
+import AboutUs from "./components/filter";
+
+// Alternative with image sources
+const imageLogos = [
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+    alt: "Amazon",
+    href: "#",
+  },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+    alt: "Google",
+    href: "#",
+  },
+  {
+    src: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+    alt: "Microsoft",
+    href: "#",
+  },
+];
 
 function App() {
   return (
@@ -44,8 +67,8 @@ function App() {
           </h1>
 
           <h2 className="text-white max-w-3xl mt-3">
-            Bangun potensi diri dan keterampilan masa depan.
-            Wujudkan inovasi yang memberikan dampak nyata untuk Indonesia.
+            Bangun potensi diri dan keterampilan masa depan. Wujudkan inovasi
+            yang memberikan dampak nyata untuk Indonesia.
           </h2>
 
           <button className="mt-6 px-6 py-3 bg-blue-700 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-lg transition">
@@ -66,20 +89,76 @@ function App() {
       </div>
 
       {/* Transition Effect */}
-      <CircleTransition />
+      {/* <CircleTransition /> */}
 
+
+    <div className="relative w-full min-h-screen overflow-x-hidden bg-black">
+      
+      {/* 2. Lapisan Background (di belakang) */}
+      <div className="absolute inset-0 z-0">
+        {/* Ini adalah perbaikan typo dari 'inset-' menjadi 'inset-0' */}
+        <Squares
+          speed={0.1}
+          squareSize={40}
+          direction="diagonal"
+          borderColor="#636363"
+          hoverFillColor="#51a2ff"
+        />
+      </div>
+
+      {/* 3. Lapisan Konten (di depan) */}
+      {/* - 'relative z-10' memastikannya tampil DI ATAS background.
+        - Ini adalah tempat Anda meletakkan layout grid Anda.
+      */}
+      <div className="relative z-10">
+        {/* Anda bisa menggunakan grid Anda di sini. 
+          Contoh ini mengasumsikan <AboutUs> mengisi seluruh halaman.
+        */}
+        <main>
+          <AboutUs />
+          {/* Halaman lain bisa ditambahkan di sini menggunakan React Router */}
+        </main>
+      </div>
+      
+    </div>
       {/* Main Content */}
       <div className="relative z-30 overflow-hidden">
-        <About />
+        <Program />
 
-        <div className="bg-[#e5e7eb] min-h-screen overflow-x-hidden">
-          <Program />
-        </div>
+        
+       
 
         {/* Artikel Section */}
         <div id="artikel">
-          {/* <Artikels /> */}
+          <Artikels />
         </div>
+
+        {/* Basic horizontal loop */}
+        <div className=" bg-gray-100 h-96 overflow-hidden z-30 ">
+          <div className="max-w-7xl py-5 mx-auto  text-center">
+            <h2 className="text-5xl font-bold text-gray-800 mb-12">
+              Our Clients
+            </h2>
+            <p className="text-gray-600 mb-10">
+              Kami bangga bekerja sama dengan berbagai perusahaan ternama.
+            </p>
+
+            <LogoLoop
+              logos={imageLogos}
+              speed={120}
+              direction="left"
+              logoHeight={48}
+              gap={40}
+              hoverSpeed={0}
+              scaleOnHover
+              fadeOut
+              fadeOutColor="#ffffff"
+              ariaLabel="Technology partners"
+            />
+          </div>
+        </div>
+
+        {/* Vertical loop with deceleration on hover */}
 
         <Footer />
       </div>

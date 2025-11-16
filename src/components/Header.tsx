@@ -52,8 +52,8 @@ function Header() {
 
   const navItems = [
     { name: "Home", href: "#home", icon: HomeIcon },
-    { name: "Artikel", href: "#artikel", icon: FileIcon },
-    { name: "Profil", href: "#profil", icon: UserIcon },
+    { name: "Profil", href: "#profil", icon: FileIcon },
+    { name: "Article", href: "#Article", icon: UserIcon },
     { name: "Contact", href: "#contact", icon: MailIcon },
   ];
 
@@ -77,7 +77,7 @@ function Header() {
             {/* Logo Ultra Premium */}
             <a href="#home" className="relative group cursor-pointer">
               {/* Glow effect background */}
-              <div className="absolute -inset-3 bg-linear-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl blur-2xl opacity-0 group-hover:opacity-40 transition-all duration-700"></div>
+              <div className="absolute -inset-3 bg-linear-to-r from-blue-600 via-purple-600  rounded-2xl blur-2xl opacity-0 group-hover:opacity-40 transition-all duration-700"></div>
               
               <div className="relative flex items-center gap-3">
                 {/* Icon Container */}
