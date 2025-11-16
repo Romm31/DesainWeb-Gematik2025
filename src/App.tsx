@@ -3,19 +3,19 @@ import "./index.css";
 import Header from "./components/Header";
 import Slider from "./components/Slider";
 import TextType from "./components/Text";
-import About from "./components/tentang";
 import Program from "./components/program";
 import Footer from "./components/Footer";
 import CircleTransition from "./components/transisi";
 import Model3D from "./components/Model3d";
 import Artikels from "./components/Artikel";
 import Squares from "./components/Squares";
+import ContactPage from "./components/contact";
+import LogoLoop from "./components/LogoLoop";
+import AboutUs from "./components/filter";
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
-import ClientSection from "./components/client";
-import LogoLoop from "./components/LogoLoop";
-import AboutUs from "./components/filter";
+import { Contact } from "lucide-react";
 
 // Alternative with image sources
 const imageLogos = [
@@ -43,7 +43,7 @@ function App() {
       <Header />
 
       {/* Hero Section (Slider + 3D Model) */}
-      <div className="relative w-full h-screen overflow-hidden grid grid-cols-12">
+      <div className="relative w-full h-screen overflow-hidden grid grid-cols-12"id="home">
         {/* Slider Background */}
         <div className="absolute inset-0 z-0">
           <Slider />
@@ -88,11 +88,8 @@ function App() {
         </div>
       </div>
 
-      {/* Transition Effect */}
-      {/* <CircleTransition /> */}
 
-
-    <div className="relative w-full min-h-screen overflow-x-hidden bg-black">
+    <div className="relative w-full min-h-screen overflow-x-hidden bg-black" id="profil">
       
       {/* 2. Lapisan Background (di belakang) */}
       <div className="absolute inset-0 z-0">
@@ -121,21 +118,20 @@ function App() {
       </div>
       
     </div>
+
+          <CircleTransition/>
       {/* Main Content */}
-      <div className="relative z-30 overflow-hidden">
+      <div className="relative z-30 overflow-hidden" id="program">
         <Program />
 
         
        
 
-        {/* Artikel Section */}
-        <div id="artikel">
-          <Artikels />
-        </div>
+       
 
         {/* Basic horizontal loop */}
         <div className=" bg-gray-100 h-96 overflow-hidden z-30 ">
-          <div className="max-w-7xl py-5 mx-auto  text-center">
+          <div className=" py-5 mx-auto text-center ">
             <h2 className="text-5xl font-bold text-gray-800 mb-12">
               Our Clients
             </h2>
@@ -158,8 +154,13 @@ function App() {
           </div>
         </div>
 
-        {/* Vertical loop with deceleration on hover */}
+         {/* Artikel Section */}
+        <div id="Article">
+          <Artikels />
+        </div>
 
+       
+          <ContactPage/>
         <Footer />
       </div>
     </>

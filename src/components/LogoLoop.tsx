@@ -64,7 +64,7 @@ const useResizeObserver = (
       const observer = new ResizeObserver(callback);
       observer.observe(ref.current);
       return observer;
-    });
+    });       
 
     callback();
 
@@ -186,7 +186,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     logos,
     speed = 120,
     direction = 'left',
-    width = '100%',
+    width = '200%',
     logoHeight = 28,
     gap = 32,
     pauseOnHover,

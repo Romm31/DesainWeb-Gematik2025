@@ -14,13 +14,15 @@ export default function CircleTransition() {
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
-
+       // Mulai membesar setelah scroll 1000px
+  const scrollOffset = 1400;
+  const effectiveScroll = Math.max(0, scrollY - scrollOffset );
       // Update target size
-      const targetSize = Math.min(maxSize, scrollY * 2 + 5); // +5 ukuran awal
+      const targetSize = Math.min(maxSize, effectiveScroll *3+5); // +5 ukuran awal
       targetSizeRef.current = targetSize;
 
       // Update target opacity
-      targetOpacityRef.current = scrollY > 0 ? 1 : 0;
+       targetOpacityRef.current = scrollY > scrollOffset ? 1 : 0;
     };
 
     window.addEventListener("scroll", handleScroll);

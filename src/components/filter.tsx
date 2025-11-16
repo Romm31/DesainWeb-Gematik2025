@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Users, Building2, Mail, Linkedin, Twitter, Square } from 'lucide-react';
 import CountUp from 'react-countup'; // Pastikan sudah di-install
 
+import img1 from '../assets/img1.jpg'
+
 interface Stat {
   label: string;
   value: string;
@@ -60,66 +62,38 @@ const AboutUs: React.FC = () => {
     
   const teamMembers: TeamMember[] = [
     // ... (Data teamMembers Anda tidak perlu diubah) ...
+
     {
       id: 1,
-      name: "Budi Santoso",
-      position: "CEO & Founder",
+      name: "Erwin Wijaya",
+      position: "Cyber Scurity",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
-      bio: "Visioner dengan 15+ tahun pengalaman di industri teknologi",
-      email: "budi@techvision.id",
+      bio: "    ",
+      email: "",
       linkedin: "#",
       twitter: "#"
     },
     {
       id: 2,
-      name: "Siti Nurhaliza",
-      position: "CTO",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
-      bio: "Expert dalam AI dan Machine Learning dengan berbagai penghargaan internasional",
-      email: "siti@techvision.id",
+      name: "Sendy Agus Priyanto",
+      position: "web developer  ",
+      image: img1,
+      bio: "",
+      email: "sendyaguspriyanto556@gmail.com",
       linkedin: "#",
       twitter: "#"
     },
     {
       id: 3,
-      name: "Ahmad Fauzi",
-      position: "Head of Design",
+      name: "Muhammad Bika Al-sFaridz Hakim",
+      position: "UI/UX Desainer",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
-      bio: "Designer kreatif dengan passion untuk user experience yang luar biasa",
-      email: "ahmad@techvision.id",
-      linkedin: "#",
-      twitter: "#"
-    },
-    {
-      id: 4,
-      name: "Dewi Lestari",
-      position: "Head of Marketing",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
-      bio: "Strategist handal dengan track record membangun brand awareness",
-      email: "dewi@techvision.id",
-      linkedin: "#",
-      twitter: "#"
-    },
-    {
-      id: 5,
-      name: "Reza Pratama",
-      position: "Lead Developer",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-      bio: "Full-stack developer dengan expertise di berbagai teknologi modern",
-      email: "reza@techvision.id",
-      linkedin: "#",
-      twitter: "#"
-    },
-    {
-      id: 6,
-      name: "Maya Safitri",
-      position: "HR Manager",
-      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop",
-      bio: "Passionate tentang pengembangan talenta dan budaya perusahaan",
-      email: "maya@techvision.id",
+      bio: "",
+      email: "",
       linkedin: "#",
       twitter: "#"
     }
+    
   ];
 
   return (
@@ -252,7 +226,7 @@ const AboutUs: React.FC = () => {
 
         {/* Team Content */}
         {activeTab === 'team' && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in ">
           	{teamMembers.map((member: TeamMember, idx: number) => (
           	  <div
   	  	  	key={member.id}
@@ -266,7 +240,7 @@ const AboutUs: React.FC = () => {
   	  	  	  	alt={member.name}
   	  	  	  	className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
   	  	  	  />
-  	  	  	  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+  	  	  	  <div className="absolute inset-0 bg-gradient-to-t from-blue-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
   	  	  	  
   	  	  	  {/* Social Icons */}
   	  	  	  <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
@@ -297,7 +271,7 @@ const AboutUs: React.FC = () => {
   	  	  	  <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-blue-400 transition-all duration-300">
   	  	  	  	{member.name}
   	  	  	  </h3>
-  	  	  	  <p className="text-purple-300 font-semibold mb-3">{member.position}</p>
+  	  	  	  <p className="text-blue-300 font-semibold mb-3">{member.position}</p>
   	  	  	  <p className="text-purple-100 text-sm leading-relaxed">{member.bio}</p>
   	  	  	</div>
 

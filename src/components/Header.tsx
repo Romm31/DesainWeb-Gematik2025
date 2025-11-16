@@ -1,3 +1,4 @@
+import { BookIcon } from "lucide-react";
 import { useState, useEffect } from "react";
 
 // SVG Icons
@@ -52,8 +53,9 @@ function Header() {
 
   const navItems = [
     { name: "Home", href: "#home", icon: HomeIcon },
-    { name: "Profil", href: "#profil", icon: FileIcon },
-    { name: "Article", href: "#Article", icon: UserIcon },
+    { name: "Profil", href: "#profil", icon: UserIcon },
+    { name: "Program", href: "#program", icon: BookIcon },
+    { name: "Article", href: "#Article", icon: FileIcon },
     { name: "Contact", href: "#contact", icon: MailIcon },
   ];
 
@@ -77,13 +79,13 @@ function Header() {
             {/* Logo Ultra Premium */}
             <a href="#home" className="relative group cursor-pointer">
               {/* Glow effect background */}
-              <div className="absolute -inset-3 bg-linear-to-r from-blue-600 via-purple-600  rounded-2xl blur-2xl opacity-0 group-hover:opacity-40 transition-all duration-700"></div>
+              <div className="absolute -inset-3 bg-linear-to-r from-blue-600 via-blue-400 to-blue-600  rounded-2xl blur-2xl opacity-0 group-hover:opacity-40 transition-all duration-700"></div>
               
               <div className="relative flex items-center gap-3">
                 {/* Icon Container */}
                 <div className="relative">
-                  <div className="absolute inset-0 bg-linear-to-br from-blue-500 to-purple-600 rounded-2xl blur-md opacity-50 group-hover:opacity-70 transition-opacity"></div>
-                  <div className="relative w-12 h-12 rounded-2xl bg-linear-to-br from-blue-600/40 to-purple-600/40 backdrop-blur-xl border-2 border-white/20 flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                  <div className="absolute inset-0 bg-linear-to-br from-blue-600 via-blue-400 to-blue-600 rounded-2xl blur-md opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                  <div className="relative w-12 h-12 rounded-2xl bg-linear-to-br from-blue-600 via-blue-400 to-blue-600 backdrop-blur-xl border-2 border-white/20 flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <span className="text-2xl font-black text-transparent bg-clip-text bg-linear-to-br from-white via-blue-200 to-purple-300">Z</span>
                   </div>
                 </div>
@@ -91,8 +93,8 @@ function Header() {
                 {/* Text Logo */}
                 <div className="flex flex-col">
                   <h1 className="text-2xl font-black tracking-tight leading-none">
-                    <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 group-hover:from-blue-300 group-hover:via-purple-300 group-hover:to-pink-300 transition-all duration-500">Gen</span>
-                    <span className="text-transparent bg-clip-text bg-linear-to-r from-yellow-400 to-orange-500 group-hover:from-yellow-300 group-hover:to-orange-400 transition-all duration-500">-Z</span>
+                    <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-blue-400 to-blue-400 group-hover:from-blue-300 group-hover:via-blue-300 group-hover:to-blue-300 transition-all duration-500">Gen</span>
+                    <span className="text-transparent bg-clip-text bg-blue-400  group-hover:from-blue-300 group-hover:to-blue-400 transition-all duration-500">-Z</span>
                   </h1>
                   <p className="text-[9px] text-gray-500 tracking-[0.2em] uppercase font-semibold group-hover:text-gray-400 transition-colors">Empowering Youth</p>
                 </div>
@@ -111,13 +113,13 @@ function Header() {
                     onClick={() => handleNavClick(item.name)}
                     className={`relative px-5 py-3 rounded-xl font-bold text-sm transition-all duration-500 flex items-center gap-2.5 group overflow-hidden ${
                       isActive
-                        ? "bg-linear-to-r from-blue-600 to-purple-600 text-white shadow-xl shadow-blue-500/40"
+                        ? "bg-linear-to-br from-blue-600 via-blue-400 to-blue-600 text-white shadow-xl shadow-blue-500/40"
                         : "text-gray-300 hover:text-white"
                     }`}
                   >
                     {/* Background hover effect */}
                     {!isActive && (
-                      <div className="absolute inset-0 bg-linear-to-r from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="absolute inset-0 bg-linear-to-r from-blue-600/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     )}
                     
                     {/* Icon with gradient on hover */}

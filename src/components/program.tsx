@@ -61,13 +61,12 @@ const Program = () => {
   return (
     <section className="relative max-w-7xl mx-auto py-20 px-4 overflow-hidden">
       {/* Header */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 ">
         <h2 className="text-5xl  font-bold mb-6 text-gray-900">
-          Program Kami
+          Our Programs
         </h2>
         <p className="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
-          Gen Z hadir untuk memberdayakan generasi muda Indonesia menghadapi era disrupsi 
-          dengan percaya diri dan keterampilan yang tepat.
+          Gen Z is here to empower Indonesia's younger generation to face the era of disruption with confidence and the right skills.
         </p>
       </div>
 
