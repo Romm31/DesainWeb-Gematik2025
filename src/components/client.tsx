@@ -1,62 +1,59 @@
 import React from "react";
+import Spline from "@splinetool/react-spline";
 
-// Contoh data client
-const clients = [
-  {
-    id: 1,
-    name: "Google",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
-  },
-  {
-    id: 2,
-    name: "Microsoft",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
-  },
-  {
-    id: 3,
-    name: "Apple",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
-  },
-  {
-    id: 4,
-    name: "Tesla",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg",
-  },
-  {
-    id: 5,
-    name: "Amazon",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
-  },
-];
-
-const ClientSection: React.FC = () => {
+const ContactPage: React.FC = () => {
   return (
-    <section className="py-16 bg-gray-100">
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <h2 className="text-5xl font-bold text-gray-800 mb-12">
-          Our Clients
-        </h2>
-        <p className="text-gray-600 mb-10">
-          Kami bangga bekerja sama dengan berbagai perusahaan ternama.
+    <div className="min-h-screen bg-black text-white grid grid-cols-1 md:grid-cols-2 px-10 py-20">
+      
+      {/* Left Column - Contact Form */}
+      <div className="flex flex-col justify-center max-w-lg">
+        <h1 className="text-5xl font-bold leading-tight mb-6">
+          Let’s <span className="text-blue-400">Talk.</span>
+        </h1>
+
+        <p className="text-gray-300 mb-10">
+          Fill out the form below and our team will contact you shortly.
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
-          {clients.map((client) => (
-            <div
-              key={client.id}
-              className="flex items-center justify-center p-4 bg-white rounded-lg shadow hover:shadow-lg transition"
-            >
-              <img
-                src={client.logo}
-                alt={client.name}
-                className="max-h-16 object-contain"
-              />
-            </div>
-          ))}
+        <form className="flex flex-col gap-5">
+          <input
+            type="text"
+            placeholder="Your Name"
+            className="bg-[#111] border border-gray-700 px-4 py-3 rounded-xl focus:outline-none focus:border-blue-400"
+          />
+
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="bg-[#111] border border-gray-700 px-4 py-3 rounded-xl focus:outline-none focus:border-blue-400"
+          />
+
+          <textarea
+            placeholder="Your Message"
+            rows={5}
+            className="bg-[#111] border border-gray-700 px-4 py-3 rounded-xl focus:outline-none focus:border-blue-400"
+          ></textarea>
+
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-600 transition-all text-white py-3 rounded-xl font-semibold"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      {/* Right Column — 3D Spline */}
+      <div className="flex justify-center items-center">
+        <div className="w-[350px] h-[350px] md:w-[500px] md:h-[500px]">
+             <Spline
+        scene="https://prod.spline.design/sB9nN4m4eXcf87-g/scene.splinecode" 
+      />
         </div>
       </div>
-    </section>
+
+    </div>
   );
 };
 
-export default ClientSection;
+export default ContactPage;
