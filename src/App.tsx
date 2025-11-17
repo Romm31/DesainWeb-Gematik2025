@@ -12,7 +12,6 @@ import Squares from "./components/Squares";
 import ContactPage from "./components/Contact";
 import LogoLoop from "./components/LogoLoop";
 import AboutUs from "./components/filter";
-import Spline from '@splinetool/react-spline';
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
 import { useEffect } from "react";
