@@ -3,7 +3,9 @@ import { Users, Building2, Mail, Linkedin, Twitter } from 'lucide-react';
 // Square DIHAPUS — UNUSED
 
 import CountUp from 'react-countup';
-import img1 from '../assets/img1.jpg'; // Tetap dipakai
+import img1 from '../assets/img1.jpg'; 
+import img2 from '../assets/img2.jpg'; 
+import img3 from '../assets/img3.jpg'; 
 
 interface Stat {
   label: string;
@@ -45,22 +47,22 @@ const AboutUs: React.FC = () => {
     name: "Gen-Z",
     founded: "2018",
     description:
-      "Kami adalah perusahaan teknologi terkemuka yang berfokus pada inovasi digital dan solusi bisnis modern. Dengan pengalaman lebih dari 5 tahun, kami telah membantu ratusan klien mencapai transformasi digital mereka.",
+      "We are a leading technology company focused on digital innovation and modern business solutions. With over 5 years of experience, we have helped hundreds of clients achieve their digital transformation.",
     mission:
-      "Memberdayakan bisnis melalui teknologi inovatif dan solusi digital yang berkelanjutan.",
+      "Empowering businesses through innovative technologies and sustainable digital solutions.",
     vision:
-      "Menjadi pemimpin teknologi terpercaya di Asia Tenggara yang menghadirkan dampak positif bagi masyarakat.",
+      "To be a trusted technology leader in Southeast Asia that brings positive impact to society.",
     values: [
-      { title: "Inovasi", desc: "Selalu mencari cara baru dan lebih baik" },
-      { title: "Integritas", desc: "Berkomitmen pada kejujuran dan transparansi" },
-      { title: "Kolaborasi", desc: "Bekerja sama untuk hasil terbaik" },
-      { title: "Keunggulan", desc: "Memberikan kualitas tertinggi dalam setiap hal" },
+      { title: "Inovation", desc: "Always looking for new and better ways" },
+      { title: "Integrity", desc: "Committed to honesty and transparency" },
+      { title: "Colaboration", desc: "Bekerja sama untuk hasil terbaik" },
+      { title: "Superiority", desc: "Memberikan kualitas tertinggi dalam setiap hal" },
     ],
     stats: [
-      { label: "Klien Aktif", value: "500+" },
-      { label: "Proyek Selesai", value: "1000+" },
-      { label: "Tim Profesional", value: "150+" },
-      { label: "Negara", value: "15+" },
+      { label: "Active Client", value: "500+" },
+      { label: "Project Completed", value: "1000+" },
+      { label: "Professional Team", value: "150+" },
+      { label: "Country", value: "15+" },
     ],
   };
 
@@ -69,8 +71,7 @@ const AboutUs: React.FC = () => {
       id: 1,
       name: "Erwin Wijaya",
       position: "Cyber Scurity",
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop",
+      image:img3,
       bio: "    ",
       email: "",
       linkedin: "#",
@@ -90,8 +91,7 @@ const AboutUs: React.FC = () => {
       id: 3,
       name: "Muhammad Bika Al-sFaridz Hakim",
       position: "UI/UX Desainer",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
+      image:img2,
       bio: "",
       email: "",
       linkedin: "#",
@@ -108,7 +108,7 @@ const AboutUs: React.FC = () => {
             About US
           </h1>
           <p className="text-xl text-purple-200 animate-slide-up">
-            Kenali lebih dekat siapa kami dan apa yang kami lakukan
+           Get to know more about who we are and what we do
           </p>
         </div>
 

@@ -22,16 +22,17 @@ const Footer = () => {
 
   const navItems = [
     { name: "Home", href: "#home" },
-    { name: "Artikel", href: "#artikel" },
     { name: "Profil", href: "#profil" },
-    { name: "Contact", href: "#contact" },
+    { name: "Program", href: "#program" },
+    { name: "Artikel", href: "#Article" },
+    { name: "Contact", href: "#kontak" },
   ];
 
   const resources = [
-    { name: "Karir", href: "#" },
+    { name: "Career", href: "#" },
     { name: "FAQ", href: "#" },
     { name: "Terms & Privacy", href: "#" },
-    { name: "Dukungan", href: "#" },
+    { name: "Support", href: "#" },
   ];
 
   const socialLinks = [
@@ -67,10 +68,10 @@ const Footer = () => {
               </div>
             </div>
               <p className="mt-2 text-[10px] text-gray-500 tracking-widest uppercase font-semibold">
-              Empowering Youth
+              Future Forward
             </p>
             <p className="mt-6 text-gray-400 text-sm leading-relaxed">
-              Realize innovations that have a real impact on Indonesia.
+              Building an Empowered, Innovative, and Adaptable Young Generation Amidst Constant Change.
             </p>
           
           </div>

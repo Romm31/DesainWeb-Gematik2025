@@ -4,25 +4,25 @@ const articles = [
   {
     id: 1,
     title: "Sharpening Young People's Digital Skills",
-    excerpt: "Generasi muda harus menguasai keterampilan digital agar mampu bersaing dan berinovasi di era disrupsi teknologi.",
+    excerpt: "The younger generation must master digital skills to be able to compete and innovate in the era of technological disruption..",
     image: "https://plus.unsplash.com/premium_photo-1681505713407-bc50ef2c2b38?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8U2hhcnBlbmluZyUyMFlvdW5nJTIwUGVvcGxlJ3MlMjBEaWdpdGFsJTIwU2tpbGxzfGVufDB8fDB8fHww",
   },
   {
     id: 2,
     title: "Creativity and Innovation for the Future",
-    excerpt: "Kemampuan berpikir kreatif dan inovatif menjadi kunci sukses anak muda menghadapi perubahan cepat di era digital.",
+    excerpt: "The ability to think creatively and innovatively is the key to success for young people facing rapid changes in the digital era.",
     image: "https://plus.unsplash.com/premium_photo-1695807489199-4ba908b63826?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8S3JlYXRpdml0YXMlMjBkYW4lMjBJbm92YXNpJTIwdW50dWslMjBNYXNhJTIwRGVwYW58ZW58MHx8MHx8fDA%3D",
   },
   {
     id: 3,
     title: "The Importance of Emotional Intelligence",
-    excerpt: "Selain keterampilan teknis, kecerdasan emosional membantu generasi muda menghadapi tantangan sosial dan profesional di era disrupsi.",
+    excerpt: "In addition to technical skills, emotional intelligence helps the younger generation face social and professional challenges in the era of disruption.",
     image: "https://media.istockphoto.com/id/2164574681/photo/wooden-blocks-with-the-letters-iq-eq-and-aq-representing-intelligence-quotient-emotional.webp?a=1&b=1&s=612x612&w=0&k=20&c=-CPNU_5GLplxZ-KiRKuj4k06hRcEW3Rx6WuDJijxez0=",
   },
   {
     id: 4,
     title: "Entrepreneurship di Era Digital",
-    excerpt: "Menjadi wirausaha muda dengan memanfaatkan teknologi dan platform digital adalah salah satu cara memberdayakan diri dan masyarakat.",
+    excerpt: "Becoming a young entrepreneur by utilizing technology and digital platforms is one way to empower yourself and your community.",
     image: "https://media.istockphoto.com/id/2163952011/photo/beautiful-millennial-businesswoman-using-ai-on-smart-phone-and-laptop-for-work.webp?a=1&b=1&s=612x612&w=0&k=20&c=fJWNv4CsNQKDn7FYztTZYCj73ImZ7AEyS0TMM1WpBLk= ",
   },
 ];

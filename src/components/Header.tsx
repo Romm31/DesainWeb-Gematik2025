@@ -56,7 +56,7 @@ function Header() {
     { name: "Profil", href: "#profil", icon: UserIcon },
     { name: "Program", href: "#program", icon: BookIcon },
     { name: "Article", href: "#Article", icon: FileIcon },
-    { name: "Contact", href: "#contact", icon: MailIcon },
+    { name: "Contact", href: "#kontak", icon: MailIcon },
   ];
 
   const handleNavClick = (section: string) => {
@@ -96,7 +96,9 @@ function Header() {
                     <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-blue-400 to-blue-400 group-hover:from-blue-300 group-hover:via-blue-300 group-hover:to-blue-300 transition-all duration-500">Gen</span>
                     <span className="text-transparent bg-clip-text bg-blue-400  group-hover:from-blue-300 group-hover:to-blue-400 transition-all duration-500">-Z</span>
                   </h1>
-                  <p className="text-[9px] text-gray-500 tracking-[0.2em] uppercase font-semibold group-hover:text-gray-400 transition-colors">Empowering Youth</p>
+                  <p className="text-[9px] text-gray-500 tracking-[0.2em] uppercase font-semibold group-hover:text-gray-400 transition-colors">Future Forward
+
+                  </p>
                 </div>
               </div>
             </a>

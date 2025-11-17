@@ -22,12 +22,12 @@ export default function ContactPage() {
 
       {/* Right: Modern Form */}
       <div className="md:w-1/2 w-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-10 shadow-2xl">
-        <form className="flex flex-col gap-6">
+        <form  className="flex flex-col gap-6">
           <div>
             <label className="block text-sm mb-2 text-gray-300">Name</label>
             <input
               type="text"
-              className="w-full bg-black/40 border border-gray-700 px-4 py-3 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full text-white bg-black/40 border border-gray-700 px-4 py-3 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
               placeholder="Enter your name"
             />
           </div>
@@ -36,7 +36,7 @@ export default function ContactPage() {
             <label className="block text-sm mb-2 text-gray-300">Email</label>
             <input
               type="email"
-              className="w-full bg-black/40 border border-gray-700 px-4 py-3 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full text-white bg-black/40 border border-gray-700 px-4 py-3 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
               placeholder="Enter your email"
             />
           </div>
@@ -45,7 +45,7 @@ export default function ContactPage() {
             <label className="block text-sm mb-2 text-gray-300">Message</label>
             <textarea
               rows={5}
-              className="w-full bg-black/40 border border-gray-700 px-4 py-3 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="w-full text-white bg-black/40 border border-gray-700 px-4 py-3 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
               placeholder="Write your message here..."
             ></textarea>
           </div>

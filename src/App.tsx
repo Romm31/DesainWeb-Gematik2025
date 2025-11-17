@@ -56,7 +56,7 @@ function App() {
         <div className="col-span-12 md:col-span-6 z-20 flex flex-col items-start mx-20 justify-center">
           <div className="text-white text-5xl font-bold mb-5">
             <TextType
-              text={["Coding", "for your websites", "Happy coding!"]}
+              text={["Adaptation", "Innovation", "Solutions."]}
               typingSpeed={75}
               pauseDuration={1500}
               showCursor={true}
@@ -65,16 +65,15 @@ function App() {
           </div>
 
           <h1 className="text-white text-5xl font-bold drop-shadow-xl">
-            "Empowering Youth in the Era of{" "}
+            "Future Forward: Navigating {" "}
             <span className="text-amber-400">Disruption</span>"
           </h1>
 
           <h2 className="text-white max-w-3xl mt-3">
-            Bangun potensi diri dan keterampilan masa depan. Wujudkan inovasi
-            yang memberikan dampak nyata untuk Indonesia.
+            Building an Empowered, Innovative, and Adaptable Young Generation Amidst Constant Change.
           </h2>
 
-          <button className="mt-6 px-6 py-3 bg-blue-700 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-lg transition">
+          <button className="mt-6 px-6 py-3 bg-gradient-to-r bg-blue-600 via-blue-400 to-blue-600 hover:bg-blue-600 text-white font-semibold rounded-lg shadow-lg transition">
             Learn More
           </button>
         </div>
@@ -139,7 +138,7 @@ function App() {
               Our Clients
             </h2>
             <p className="text-gray-600 mb-10">
-              Kami bangga bekerja sama dengan berbagai perusahaan ternama.
+              We are proud to work with various well-known companies.
             </p>
 
             <LogoLoop
@@ -158,13 +157,18 @@ function App() {
         </div>
 
          {/* Artikel Section */}
+         <div id="Article">
+
           <Artikels/>
+         </div>
       
 
      
 
+          <div id="kontak">
 
           <ContactPage/>
+          </div>
         <Footer />
       </div>
     </>

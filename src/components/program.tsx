@@ -22,25 +22,25 @@ const pgr = [
   {
     id: 1,
     title: "Digital Skill Training",
-    excerpt: "Belajar dasar pemasaran digital, desain grafis, dan teknologi terkini untuk meningkatkan daya saing di era digital.",
+    excerpt: "Learn the basics of digital marketing, graphic design, and the latest technologies to increase competitiveness in the digital age.",
     image: img1,
   },
   {
     id: 2,
     title: "Personal Branding",
-    excerpt: "Membangun citra diri profesional di media sosial dan platform digital untuk membuka peluang karir yang lebih luas.",
+    excerpt: "Building a professional self-image on social media and digital platforms to open up wider career opportunities.",
     image: img2,
   },
   {
     id: 3,
     title: "Startup Innovation",
-    excerpt: "Menumbuhkan ide bisnis berbasis solusi nyata dengan mentoring dari praktisi dan akses ke ekosistem startup.",
+    excerpt: "Growing real solution-based business ideas with mentoring from practitioners and access to the startup ecosystem.",
     image: img3,
   },
   {
     id: 4,
     title: "Community Empowerment",
-    excerpt: "Kolaborasi untuk proyek sosial yang memberikan dampak positif bagi masyarakat dan lingkungan sekitar.",
+    excerpt: "Collaboration for social projects that have a positive impact on the community and the surrounding environment.",
     image: img2,
   },
 ];
