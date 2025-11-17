@@ -9,13 +9,12 @@ import CircleTransition from "./components/transisi";
 import Model3D from "./components/Model3d";
 import Artikels from "./components/Artikel";
 import Squares from "./components/Squares";
-import ContactPage from "./components/contact";
+import ContactPage from "./components/Contact";
 import LogoLoop from "./components/LogoLoop";
 import AboutUs from "./components/filter";
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
-import { Contact } from "lucide-react";
 
 // Alternative with image sources
 const imageLogos = [
