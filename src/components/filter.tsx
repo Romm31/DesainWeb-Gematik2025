@@ -55,8 +55,8 @@ const AboutUs: React.FC = () => {
     values: [
       { title: "Inovation", desc: "Always looking for new and better ways" },
       { title: "Integrity", desc: "Committed to honesty and transparency" },
-      { title: "Colaboration", desc: "Bekerja sama untuk hasil terbaik" },
-      { title: "Superiority", desc: "Memberikan kualitas tertinggi dalam setiap hal" },
+      { title: "Colaboration", desc: "Working together for the best results" },
+      { title: "Superiority", desc: "Providing the highest quality in every aspect" },
     ],
     stats: [
       { label: "Active Client", value: "500+" },
