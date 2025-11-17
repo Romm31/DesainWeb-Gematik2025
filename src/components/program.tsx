@@ -66,7 +66,7 @@ const Program = () => {
           Our Programs
         </h2>
         <p className="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
-          Gen Z is here to empower Indonesia's younger generation to face the era of disruption with confidence and the right skills.
+          Nextgen impact is here to empower Indonesia's younger generation to face the era of disruption with confidence and the right skills.
         </p>
       </div>
 

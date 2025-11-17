@@ -93,8 +93,7 @@ function Header() {
                 {/* Text Logo */}
                 <div className="flex flex-col">
                   <h1 className="text-2xl font-black tracking-tight leading-none">
-                    <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-blue-400 to-blue-400 group-hover:from-blue-300 group-hover:via-blue-300 group-hover:to-blue-300 transition-all duration-500">Gen</span>
-                    <span className="text-transparent bg-clip-text bg-blue-400  group-hover:from-blue-300 group-hover:to-blue-400 transition-all duration-500">-Z</span>
+                    <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-blue-400 to-blue-400 group-hover:from-blue-300 group-hover:via-blue-300 group-hover:to-blue-300 transition-all duration-500">NextGen Impact</span>
                   </h1>
                   <p className="text-[9px] text-gray-500 tracking-[0.2em] uppercase font-semibold group-hover:text-gray-400 transition-colors">Future Forward
 
