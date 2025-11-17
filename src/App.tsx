@@ -18,6 +18,9 @@ import { OrbitControls, Environment } from "@react-three/drei";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Loading from "./components/Loading";
+import { useState } from "react";
+
 
 
 
@@ -43,16 +46,28 @@ const imageLogos = [
 ];
 
 function App() {
+  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: false,
-      easing: "ease-out-cubic",
-    });
-  }, []);
+
+useEffect(() => {
+  AOS.init({
+    duration: 800,
+    once: false,
+    easing: "ease-out-cubic",
+  });
+
+  const timer = setTimeout(() => {
+    setLoading(false);
+  }, 2000);
+
+  return () => clearTimeout(timer);
+}, []);
 
   return (
+     <>
+      {loading && <Loading />}  {/* INI loader */}
+
+      {!loading && (
     <>
       {/* Header */}
       <Header />
@@ -173,9 +188,11 @@ function App() {
         </div>
 
          {/* Artikel Section */}
-         <div id="Article" data-aos="fade-up">
+         <div id="Article" >
+          <div className=""data-aos="fade-up">
 
           <Artikels/>
+          </div>
          </div>
       
 
@@ -187,6 +204,9 @@ function App() {
           </div>
         <Footer />
       </div>
+      
+      </>
+      )}
     </>
   );
 }
