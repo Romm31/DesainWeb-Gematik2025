@@ -15,7 +15,6 @@ import AboutUs from "./components/filter";
 import Spline from '@splinetool/react-spline';
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
-import { Contact } from "lucide-react";
 
 
 
