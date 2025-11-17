@@ -15,6 +15,9 @@ import AboutUs from "./components/filter";
 import Spline from '@splinetool/react-spline';
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Environment } from "@react-three/drei";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 
 
@@ -40,6 +43,15 @@ const imageLogos = [
 ];
 
 function App() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      easing: "ease-out-cubic",
+    });
+  }, []);
+
   return (
     <>
       {/* Header */}
@@ -56,7 +68,7 @@ function App() {
         <div className="col-span-12 md:col-span-6 z-20 flex flex-col items-start mx-20 justify-center">
           <div className="text-white text-5xl font-bold mb-5">
             <TextType
-              text={["Adaptation", "Innovation", "Solutions."]}
+              text={["Adaptation", "Innovation", "Solutions"]}
               typingSpeed={75}
               pauseDuration={1500}
               showCursor={true}
@@ -123,8 +135,12 @@ function App() {
 
           <CircleTransition/>
       {/* Main Content */}
-      <div className="relative z-30 overflow-hidden" id="program">
+      <div className="relative z-30 overflow-hidden " id="program"> 
+        
+<div className="" data-aos="fade-up">
+
         <Program />
+</div>
 
         
        
@@ -157,7 +173,7 @@ function App() {
         </div>
 
          {/* Artikel Section */}
-         <div id="Article">
+         <div id="Article" data-aos="fade-up">
 
           <Artikels/>
          </div>
