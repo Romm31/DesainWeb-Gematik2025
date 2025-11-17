@@ -62,8 +62,7 @@ const Footer = () => {
                   <span className="text-xl font-black text-transparent bg-clip-text bg-linear-to-br from-white via-blue-200 to-purple-300">Z</span>
                 </div>
                 <h3 className="text-2xl font-black">
-                  <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-blue-400 to-blue-400">Gen</span>
-                  <span className="text-transparent bg-clip-text bg-blue-400">-Z</span>
+                  <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-blue-400 to-blue-400">NextGen Impact</span>
                 </h3>
               </div>
             </div>
@@ -169,7 +168,7 @@ const Footer = () => {
         <div className="relative pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-500">
-              © {currentYear} <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-blue-400 font-semibold">Gen-Z</span>. All rights reserved.
+              © {currentYear} <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 to-blue-400 font-semibold">NextGen Impact</span>. All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-xs text-gray-500">
               <a href="#" className="hover:text-gray-300 transition-colors">Privacy Policy</a>
