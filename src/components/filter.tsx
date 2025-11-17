@@ -3,9 +3,9 @@ import { Users, Building2, Mail, Linkedin, Twitter } from 'lucide-react';
 // Square DIHAPUS — UNUSED
 
 import CountUp from 'react-countup';
-import img1 from '../assets/img1.jpg'; 
-import img2 from '../assets/img2.jpg'; 
-import img3 from '../assets/img3.jpg'; 
+import img1 from '../assets/img1.webp'; 
+import img2 from '../assets/img2.webp'; 
+import img3 from '../assets/img3.webp'; 
 
 interface Stat {
   label: string;
